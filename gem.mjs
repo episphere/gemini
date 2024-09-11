@@ -1,0 +1,1 @@
+console.log(`gem.mjs (gemini SDK) imported\n${Date()}`);
