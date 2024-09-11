@@ -8,19 +8,21 @@ class GEM {
             this.key = prompt(`please provide your API key`)
             localStorage.gemKey = this.key
         }
-        this.post = fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${localStorage.gemKey}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "contents": [{
-                    "parts": [{
-                        "text": "Explain how AI works"
+        this.post = function(txt="Explain how AI works") {
+            return fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${localStorage.gemKey}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "contents": [{
+                        "parts": [{
+                            "text": txt
+                        }]
                     }]
-                }]
-            })
-        }).then(response => response.json()).then(data => console.log(data)).catch(error => console.error('Error:', error));
+                })
+            }).then(response => response.json()).then(data => console.log(data)).catch(error => console.error('Error:', error));
+        }
     }
 }
 
