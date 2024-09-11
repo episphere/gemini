@@ -4,4 +4,6 @@ console.log(`index.js loaded\n${Date()}`);
 (async function(){
     console.log(`async runtime\n${Date()}`);
     GEM = (await import(`${location.href}gem.mjs`)).GEM
+    // look for key
+    
 })();
