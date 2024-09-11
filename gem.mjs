@@ -9,10 +9,11 @@ class GEM {
             localStorage.gemKey = this.key
         }
         this.post = function(txt="Explain how AI works") {
-            return fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${localStorage.gemKey}`, {
+            return fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'x-goog-api-key': `${this.key}`
                 },
                 body: JSON.stringify({
                     "contents": [{
