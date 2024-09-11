@@ -5,7 +5,7 @@ setTimeout(function() {
     (document.getElementById('provideKey')).onclick = function() {
         localStorage.gemKey = prompt(`please provide your API key`)
     }
-}, 1000);
+}, 100);
 
 // application
 (async function() {
