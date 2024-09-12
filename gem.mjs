@@ -8,7 +8,8 @@ class GEM {
             this.key = prompt(`please provide your API key`)
             localStorage.gemKey = this.key
         }
-        this.post = function(txt="Explain how AI works") {
+        /*
+        this.post = function(txt="how to best grill sardines") {
             return fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent`, {
                 method: 'POST',
                 headers: {
@@ -23,6 +24,29 @@ class GEM {
                     }]
                 })
             }).then(response => response.json()).then(data => console.log(data)).catch(error => console.error('Error:', error));
+        }
+        */
+        this.post = async function(txt="how to best grill sardines") {
+            let res = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-goog-api-key': `${this.key}`
+                },
+                body: JSON.stringify({
+                    "contents": [{
+                        "parts": [{
+                            "text": txt
+                        }]
+                    }]
+                })
+            })).json()
+            //console.log(JSON.stringify(res.candidates[0].content,null,3))
+            console.log('res:',res.candidates[0].content.parts[0].text)
+            return res
+            //res = await res.json()
+            //4
+            //.then(response => response.json()).then(data => console.log(data)).catch(error => console.error('Error:', error));
         }
     }
 }
