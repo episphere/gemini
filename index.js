@@ -15,7 +15,7 @@ console.log(`index.js loaded\n${Date()}`);
             //console.log(`Enter at ${Date()}`,ev)
             let div = document.createElement('div')
             responseDiv.appendChild(div)
-            div.innerHTML=`<span style="color:maroon">${promptTextArea.value}</span>`
+            div.innerHTML=`<span style="color:darkgreen">${promptTextArea.value}</span>`
             let res = await g1.post(promptTextArea.value);
             promptTextArea.value='...'
             div.innerHTML+=`<p style="color:blue">${shdown.makeHtml(res.candidates[0].content.parts[0].text)}</p><hr>`
