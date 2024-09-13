@@ -44,10 +44,10 @@ code {
   color:darkgreen;
   font-family:var(--family);
   font-style: italic;
+  font-size:small;
 }
 
 button {
   border-radius: 10px;
-  font-size:medium;
   color:blue;
 }
