@@ -20,7 +20,7 @@
         Exploring <a href="https://ai.google.dev/gemini-api/docs" target="_blank">programatic interoperability</a> of Google Gemini's GenAI. For now, testing will use the <a href="https://deepmind.google/technologies/gemini/flash" target="_blank">gemini-1.5-flash</a> model.
     </p>
     <hr>
-        
+    <div id="divList">    
     <li>
         <a href="https://aistudio.google.com/app/apikey" target="_blank">API Keys</a>. <button id="provideKey">Provide yours</button> if you want to store it in localStorage. In that case <code>GEM(_YOUR_API_KEY_)</code> below, is simply <code>GEM</code> and you keep your API key out of prying eyes.
     </li>
@@ -28,12 +28,13 @@
         ES6 <a href="https://ai.google.dev/gemini-api/docs/downloads" target="_blank">SDK</a>: <code>"https://esm.run/@google/generative-ai"</code> (not used here, exploration focused on APIs, not SDKs.
     </li>
     <li>
-        Programaticaly: <br><code>await (new (await import('https://episphere.github.io/gemini/gem.mjs')).GEM(_YOUR_API_KEY_)).post('how long to the moon')
+        Programaticaly: <br><code>await (new (await import('https://episphere.github.io/gemini/gem.mjs')) .GEM(_YOUR_API_KEY_)).post('how long to the moon')
 </code>
     </li>
     <li>
         <a href="https://ai.google.dev/gemini-api/docs/quickstart?lang=web" target="_blank">Quick start</a>; Google <a href="https://ai.google.dev/gemini-api/docs/ai-studio-quickstart" target="_blank">AI Studio</a>.
     </li>
+    </div>
     <hr>
         <div id="responseDiv"><p></p></div>
         <textarea id="promptTextArea" style="width:100%;height:5em"></textarea>
