@@ -10,6 +10,13 @@ console.log(`index.js loaded\n${Date()}`);
     provideKey.onclick = function() {
         localStorage.gemKey = prompt(`please provide your API key`)
     }
+    showInfo.onchange=function(){
+        if(showInfo.checked){
+            divList.hidden=false
+        }else{
+            divList.hidden=true
+        }
+    }
     promptTextArea.onkeydown = async function(ev) {
         //promptTextArea.focus()
         if((ev.key=='Enter')&(!ev.shiftKey)){
@@ -26,7 +33,6 @@ console.log(`index.js loaded\n${Date()}`);
             promptTextArea.value=''
             promptTextArea.focus()
             console.log(res.candidates,conversation)
-            
         }
     }
 })();
