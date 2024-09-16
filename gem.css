@@ -30,6 +30,11 @@ a:hover {
     background-color:yellow;
 }
 
+button:hover {
+    color:maroon;
+    background-color:yellow;
+}
+
 .link:hover {
     background-color:yellow;
     cursor:pointer;
@@ -48,8 +53,8 @@ code {
 }
 
 button {
-  border-radius: 10px;
-  color:blue;
-  height:2em;
+  border-radius:20px;
+  color:navy;
+  height:20px;
   font-size:1em;
 }
