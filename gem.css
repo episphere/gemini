@@ -49,11 +49,11 @@ code {
   color:darkgreen;
   font-family:var(--family);
   font-style: italic;
-  font-size:small;
+  font-size:medium;
 }
 
 button {
-  border-radius:20px;
+  border-radius:10px;
   color:navy;
   height:20px;
   font-size:1em;

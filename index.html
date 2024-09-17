@@ -12,7 +12,7 @@
         [<a href="https://github.com/episphere/gemini" target="_blank">code</a>]
         [<a href="https://github.com/episphere/gemini" target="_blank">notebook</a>]
     </sup>
-    <br><span style="font-size:x-large">Explorer</span>
+    <br><span style="font-size:xx-large">Explorer</span>
     
 </h1>
 <!-- Summary -->
@@ -21,15 +21,15 @@
     </p>
         Show Info <input type="checkbox" id=showInfo>
     <hr>
-    <div id="divList" hidden=true>    
-    <li>
-        <a href="https://aistudio.google.com/app/apikey" target="_blank">API Keys</a>. <button id="provideKey">Provide yours</button> if you want to store it in localStorage. In that case <code>GEM(_YOUR_API_KEY_)</code> below, is simply <code>GEM</code> and you keep your API key out of prying eyes.
+    <div id="divList" hidden=true style="font-size:small">    
+    <li style="font-size:small">
+        <a href="https://aistudio.google.com/app/apikey" target="_blank">API Keys</a>. <button id="provideKey" style="font-size:small">Provide yours</button> if you want to store it in localStorage. In that case <code style="font-size:small">GEM(_YOUR_API_KEY_)</code> below, is simply <code style="font-size:small">GEM</code> and you keep your API key out of prying eyes.
+    </li>
+    <li style="font-size:small">
+        ES6 <a href="https://ai.google.dev/gemini-api/docs/downloads" target="_blank">SDK</a>: <code style="font-size:small">"https://esm.run/@google/generative-ai"</code> <br>Not used here, exploration focused on APIs, not SDKs.
     </li>
     <li>
-        ES6 <a href="https://ai.google.dev/gemini-api/docs/downloads" target="_blank">SDK</a>: <code>"https://esm.run/@google/generative-ai"</code> <br>Not used here, exploration focused on APIs, not SDKs.
-    </li>
-    <li>
-        Programaticaly: <br><code>await (new (await import('https://episphere.github.io/gemini/gem.mjs'))<br>.GEM(_YOUR_API_KEY_)).post('how long to the moon')</code>
+        Programaticaly: <br><code style="font-size:small">await (new (await import('https://episphere.github.io/gemini/gem.mjs'))<br>.GEM(_YOUR_API_KEY_)).post('how long to the moon')</code>
     </li>
     <li>
         <a href="https://ai.google.dev/gemini-api/docs/quickstart?lang=web" target="_blank">Quick start</a>; Google <a href="https://ai.google.dev/gemini-api/docs/ai-studio-quickstart" target="_blank">AI Studio</a>.
@@ -38,5 +38,7 @@
     </div>
         <div id="responseDiv"></div>
         <textarea id="promptTextArea" style="width:100%;height:5em"></textarea>
+        Reset <input type="checkbox" id=reset>
+        Embeddings <input type="checkbox" id=reset>
     </body>
 </html>

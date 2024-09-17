@@ -17,6 +17,7 @@ console.log(`index.js loaded\n${Date()}`);
             divList.hidden=true
         }
     }
+    reset.onclick=function(){location.href=location.href}
     promptTextArea.onkeydown = async function(ev) {
         //promptTextArea.focus()
         if((ev.key=='Enter')&(!ev.shiftKey)){
