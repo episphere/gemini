@@ -23,9 +23,26 @@ class GEM {
                     }]
                 })
             })).json()
-            //console.log(JSON.stringify(res.candidates[0].content,null,3))
             console.log('res:',res.candidates[0].content.parts[0].text)
             return res
+        }
+        this.embed=async function(txt="how to best grill sardines"){
+            let res = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-goog-api-key': `${this.key}`
+                },
+                body: JSON.stringify({
+                    "model": "models/text-embedding-004",
+                    "content": {
+                        "parts": [{
+                            "text": txt
+                        }]
+                    }
+                })
+            })).json()
+            return res.embedding.values
         }
     }
 }
