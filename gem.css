@@ -49,7 +49,7 @@ code {
   color:darkgreen;
   font-family:var(--family);
   font-style: italic;
-  font-size:medium;
+  font-size:small;
 }
 
 button {
