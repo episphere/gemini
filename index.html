@@ -10,7 +10,7 @@
     Gemini
     <sup style="font-size:medium">
         [<a href="https://github.com/episphere/gemini" target="_blank">code</a>]
-        [<a href="https://github.com/episphere/gemini" target="_blank">notebook</a>]
+        [<a href="https://observablehq.com/@episphere/gemini" target="_blank">notebook</a>]
     </sup>
     <br><span style="font-size:xx-large">Explorer</span>
     
@@ -39,6 +39,11 @@
         <div id="responseDiv"></div>
         <textarea id="promptTextArea" style="width:100%;height:5em"></textarea>
         Reset <input type="checkbox" id=reset>
-        Embed <input type="checkbox" id=embed>
+        Embed: <input type="checkbox" id=embed>
+        [
+        Q<input type="radio" id=embedQ name="embedTarget" checked=true>
+        A<input type="radio" id=embedA name="embedTarget">
+        Q&A<input type="radio" id=embedQA name="embedTarget">
+        ]
     </body>
 </html>

@@ -17,6 +17,21 @@ console.log(`index.js loaded\n${Date()}`);
             divList.hidden=true
         }
     }
+    embed.onchange=function(){
+        if(embed.checked){
+            if(embedQ.checked){
+                
+            }
+            if(embedA.checked){
+                
+            }
+            if(embedQA.checked){
+                
+            }
+            setTimeout(_=>embed.checked=false,1000)
+        }
+        embedQ
+    }
     reset.onclick=function(){location.href=location.href}
     promptTextArea.onkeydown = async function(ev) {
         //promptTextArea.focus()
