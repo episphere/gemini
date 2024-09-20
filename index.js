@@ -8,7 +8,7 @@ console.log(`index.js loaded\n${Date()}`);
     GEM = (await import(`${location.href}gem.mjs`)).GEM
     g1 = new GEM
     provideKey.onclick = function() {
-        localStorage.gemKey = prompt(`please provide your API key`)
+        localStorage.gemKey = prompt(`please provide your API key, you can find it at https://aistudio.google.com/app/apikey`)
     }
     showInfo.onchange=function(){
         if(showInfo.checked){
@@ -17,20 +17,33 @@ console.log(`index.js loaded\n${Date()}`);
             divList.hidden=true
         }
     }
-    embed.onchange=function(){
+    embed.onchange=async function(){
+        promptTextArea.value='...'
+        let n = conversation.length
         if(embed.checked){
             if(embedQ.checked){
-                
+                let ebs = await g1.embed(conversation[n-2]);
+                promptTextArea.value=JSON.stringify(ebs)
+                console.log('Q',conversation[n-2])
             }
             if(embedA.checked){
-                
+                let ebs = await g1.embed(conversation[n-1]);
+                promptTextArea.value=JSON.stringify(ebs)
+                console.log('A',conversation[n-1])
             }
             if(embedQA.checked){
-                
+                let ebs = await g1.embed(conversation.slice(n-2,n).join(' , '));
+                promptTextArea.value=JSON.stringify(ebs)
+                console.log('QA',conversation.slice(n-2,n))
+            }
+            if(embedQAs.checked){
+                let ebs = await g1.embed(conversation.join(' , '));
+                promptTextArea.value=JSON.stringify(ebs)
+                console.log('QAs',conversation)
             }
             setTimeout(_=>embed.checked=false,1000)
         }
-        embedQ
+        //embedQ
     }
     reset.onclick=function(){location.href=location.href}
     promptTextArea.onkeydown = async function(ev) {
