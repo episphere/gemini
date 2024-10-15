@@ -1,7 +1,4 @@
-
-Update: Connect for Cancer Prevention Study
-Latest news and accomplishments: recruitment & retention, biospecimen collection, and more
-
+Connect for Cancer Prevention Study
 The Connect for Cancer Prevention Cohort StudyExit Disclaimer is a new prospective cohort of 200,000 adults in the United States designed to further investigate the etiology of cancer and its outcomes, which may inform new approaches in precision prevention and early detection. The new cohort capitalizes on research innovations to advance the field of cancer epidemiology and prevention including:
 
 New technologies for exposure assessment (e.g., tracking and sensors to measure behavior and environment);
@@ -11,18 +8,12 @@ Overview of Study Setting and Design
 
 The Connect for Cancer Prevention Study (“Connect”) is being conducted within a set of integrated health care systems to recruit 200,000 members or patients between the ages of 30-70 years with no personal history of invasive cancer (other than non-melanoma skin cancer at the time of recruitment), based on an NIH IRB-approved protocolExit Disclaimer. Recruitment efforts are aimed to promote participation of individuals from diverse backgrounds and geographic areas.
 
-Infographic describing the Connect StudyEnlarge
 Consented participants are asked to complete an online questionnaire at baseline and periodically throughout the duration of follow-up, as well as provide access to their electronic medical records (EMRs). Blood, urine, and saliva samples are collected at baseline and repeatedly during follow-up. During follow-up, serial biological specimens as well as new specimens, including tissue specimens, are collected. Passive follow-up via tumor registries and EMRs provides outcome information for cancers and their precursors. 
 
 Communication and coordination of study activities occur electronically through a participant application (“app”) available for desktop or mobile devices. This state-of-the-art cohort is built with an efficient, flexible, and integrated infrastructure designed to  make the most of modern interoperability standards in order to serve as a research resource for future generations of scientists at the NCI and across the broader scientific community.
 
 Connect is supported by the NIH Intramural Research Program.
-
-Access the interactive transcript and audio-described version of "What is the Connect for Cancer Prevention Study?"Exit Disclaimer.
-
-What is the Connect for Cancer Prevention Study?
 Initial contracts for study recruitment were awarded to the following healthcare institutions:
-
 HealthPartners, Minneapolis, MN
 Henry Ford Health, Detroit, MI
 Kaiser Permanente Colorado, Denver, CO
@@ -37,15 +28,13 @@ Timeline
 Recruitment through the partnering health care institutions was launched in 2021 and will continue through 2026. Serial questionnaires, biospecimen collection, EHR data collection, data linkages and passive follow-up activities will occur during the duration of the study, which is expected to be for decades. Visit the participant recruitment website.
 
 Study Team
-
 Coordinating Center for the Connect for Cancer Prevention Study
 Mia Gaudet, Ph.D., Senior Scientist
 Nicolas Wentzensen, M.D., Ph.D., M.S., Principal Investigator
 Marie-Josèphe Horner, Ph.D., Staff Scientist, Lead of Scientific Development
 Scientific Development Working Groups
 
-Connect assets have been developed by investigators at DCEG and the broader scientific community. The Study Team is grateful for these contributions that have led to the study protocolExit Disclaimer and surveysExit Disclaimer.
-
+Connect assets have been developed by investigators at DCEG and the broader scientific community. The Study Team is grateful for these contributions that have led to the study protocol:
 Breast Cancer Screening
 Scope
 Develop protocol for transferring images, pilot protocol, consider self-reported survey module
