@@ -44,6 +44,17 @@ class GEM {
             })).json()
             return res.embedding.values
         }
+        this.chat=async function(div,url){ // target div and context url 
+            console.log(`chatting ...`)
+            if(typeof(div)=='string'){
+                div = document.getElementById(div)
+            }
+            if(!div){
+                div = document.createElement('div')
+                document.body.appendChild(div)
+            }
+            div.innerHTML='Chat with me:<textarea>...</textarea>'
+        }
     }
 }
 
