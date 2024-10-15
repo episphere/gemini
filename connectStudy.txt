@@ -1,0 +1,175 @@
+
+Update: Connect for Cancer Prevention Study
+Latest news and accomplishments: recruitment & retention, biospecimen collection, and more
+
+The Connect for Cancer Prevention Cohort StudyExit Disclaimer is a new prospective cohort of 200,000 adults in the United States designed to further investigate the etiology of cancer and its outcomes, which may inform new approaches in precision prevention and early detection. The new cohort capitalizes on research innovations to advance the field of cancer epidemiology and prevention including:
+
+New technologies for exposure assessment (e.g., tracking and sensors to measure behavior and environment);
+Large-scale analyses of the genome, epigenome, transcriptome, proteome, metabolome, microbiome;
+Molecular profiling of tumors and precursor lesions.
+Overview of Study Setting and Design
+
+The Connect for Cancer Prevention Study (“Connect”) is being conducted within a set of integrated health care systems to recruit 200,000 members or patients between the ages of 30-70 years with no personal history of invasive cancer (other than non-melanoma skin cancer at the time of recruitment), based on an NIH IRB-approved protocolExit Disclaimer. Recruitment efforts are aimed to promote participation of individuals from diverse backgrounds and geographic areas.
+
+Infographic describing the Connect StudyEnlarge
+Consented participants are asked to complete an online questionnaire at baseline and periodically throughout the duration of follow-up, as well as provide access to their electronic medical records (EMRs). Blood, urine, and saliva samples are collected at baseline and repeatedly during follow-up. During follow-up, serial biological specimens as well as new specimens, including tissue specimens, are collected. Passive follow-up via tumor registries and EMRs provides outcome information for cancers and their precursors. 
+
+Communication and coordination of study activities occur electronically through a participant application (“app”) available for desktop or mobile devices. This state-of-the-art cohort is built with an efficient, flexible, and integrated infrastructure designed to  make the most of modern interoperability standards in order to serve as a research resource for future generations of scientists at the NCI and across the broader scientific community.
+
+Connect is supported by the NIH Intramural Research Program.
+
+Access the interactive transcript and audio-described version of "What is the Connect for Cancer Prevention Study?"Exit Disclaimer.
+
+What is the Connect for Cancer Prevention Study?
+Initial contracts for study recruitment were awarded to the following healthcare institutions:
+
+HealthPartners, Minneapolis, MN
+Henry Ford Health, Detroit, MI
+Kaiser Permanente Colorado, Denver, CO
+Kaiser Permanente Georgia, Atlanta, GA
+Kaiser Permanente Hawaii, Honolulu, HI
+Kaiser Permanente Northwest, Portland, OR
+Marshfield Clinic Health System, Marshfield, WI
+Sanford Health, Sioux Falls, SD
+University of Chicago Medical Center, Chicago, IL
+Timeline
+
+Recruitment through the partnering health care institutions was launched in 2021 and will continue through 2026. Serial questionnaires, biospecimen collection, EHR data collection, data linkages and passive follow-up activities will occur during the duration of the study, which is expected to be for decades. Visit the participant recruitment website.
+
+Study Team
+
+Coordinating Center for the Connect for Cancer Prevention Study
+Mia Gaudet, Ph.D., Senior Scientist
+Nicolas Wentzensen, M.D., Ph.D., M.S., Principal Investigator
+Marie-Josèphe Horner, Ph.D., Staff Scientist, Lead of Scientific Development
+Scientific Development Working Groups
+
+Connect assets have been developed by investigators at DCEG and the broader scientific community. The Study Team is grateful for these contributions that have led to the study protocolExit Disclaimer and surveysExit Disclaimer.
+
+Breast Cancer Screening
+Scope
+Develop protocol for transferring images, pilot protocol, consider self-reported survey module
+
+Leadership
+Gretchen Gierach, Ph.D., M.P.H.
+
+Diet
+Scope
+Implementation of Diet History Questionnaire (DHQ) at six months and ASA24 at 12 months post-enrollment; return of results
+
+Leadership
+Erikka Loftfield, Ph.D., M.P.H.
+
+Electronic Medical Records
+Scope
+Define technical details of transfer, frequency, replace data
+
+Leadership
+Megan Clarke, Ph.D., M.H.S. (lead); Toniya Brown and Aileen Cunnane (CCC coordinators)
+
+Genome-Wide Association Studies (GWAS)
+Scope
+Develop ancestral algorithm, return of results and approach, oversight of QC metrics, display of data at multiple layers of access
+
+Leadership
+Mitchell Machiela, Sc.D, M.P.H. (lead); Dominique Hopkins (CCC coordinator)
+
+Liquid Biopsy
+Scope
+Develop protocol for serial biospecimen collection for future assays; define study participants of interest; develop complementary data collection
+
+Leadership
+Dr. Wentzensen (lead; CGB), Ms. Hopkins (CCC coordinator)
+
+Microbiome
+Scope
+Develop protocol for stool collection during follow-up and microbiome assays; obtain funding for entire cohort; return of results
+
+Leadership
+Emily Vogtmann, Ph.D., M.P.H. (lead), Dr. Horner (CCC coordinator)
+
+Precursor Ascertainment (Benign Breast Biopsies and Colorectal Adenomas)
+Scope
+Develop an algorithm for the ascertainment of prevalent and incident precursor lesions, starting with benign breast biopsies and colorectal adenomas.
+
+Leadership
+Dr. Clarke (lead), Ms. Cunnane (CCC coordinator)
+
+Rapid Case Ascertainment
+Scope
+Develop rapid case ascertainment algorithm and define technical details of data transfer
+
+Leadership
+Dr. Clarke (lead), Ms. Cunnane (CCC coordinator)
+
+Surveys: Cancer Screening History
+Scope
+Develop surveys related to cancer site-specific screening, diagnostic modality, and symptoms
+
+Leadership
+Dr. Neal D. Freedman (lead; DCCPS – TCRB), Julie Cusack (CCC coordinator)
+
+Surveys: Cancer Survivorship
+Scope
+Develop survey timing and frequency relative to diagnosis and content
+
+Leadership
+Dr. Freedman (lead; DCCPS – TCRB), Ms. Cusack (CCC coordinator)
+
+Surveys: Hair Products
+Scope
+Develop survey on hair straighteners, relaxers, colorants, and windows of exposure over the life-course
+
+Leadership
+Stella Koutros, Ph.D., M.P.H. (lead), Dr. Katie O'Brien (co-lead), Ms. Cusack (CCC coordinator)
+
+Surveys: Menstrual and Intimate Care Products
+Scope
+Develop survey on menstrual and intimate care products and windows of exposure over the life-course
+
+Leadership
+Dr. O'Brien (lead), Ms. Cunnane (CCC coordinator), Ms. Cusack (CCC coordinator)
+
+Surveys: Naphthalene and Scented Products
+Scope
+Develop survey on household exposures to naphthalene-containing products (e.g. mothballs) and other scented household products
+
+Leadership
+Sonja Berndt, Pharm.D., Ph.D. (lead); Ms. Cusack (CCC coordinator)
+
+Surveys: Structural and Social Determinants of Health
+Scope
+Develop conceptual model and measures of social inequities, including structural racism, built and social environment, social cohesion, and social capital
+
+Leadership
+Wayne Lawrence, Dr.P.H., M.P.H. (lead), Dr. Joseph (co-lead), Aleah Thomas, B.S. (CCC Coordinator)
+
+Members
+Dr. Lawrence (co-lead)
+Christine Joseph, Henry Ford Health (co-lead)
+Ms. Thomas (CCC coordinator)
+Madina Agénor, Brown University
+Paula Braveman, University of San Francisco
+Cheryl Clark, Brigham and Women's Hospital, Harvard University
+Gilbert Gee, University of California, Los Angeles
+Scarlett Gomez, University of California, San Francisco
+Brad Greenwood, George Mason University
+Kekoa Taparra, Stanford University
+Sean Valles, Michigan State University
+David Williams, Harvard T.H. Chan School of Public Health
+Tissues
+Scope
+Collection and sampling of benign breast biopsy, colorectal adenomas, other precursor lesions, cancer tissues
+
+Leadership
+Mustapha Abubakar, M.D., Ph.D. (lead)
+
+Resource Sharing Principles for Research
+
+The principles of the Connect for Cancer Prevention Study data and biospecimen sharing policy will support extensive and appropriate use of the resource, consistent with NIH policy. Safeguards for privacy and confidentiality will be in place to protect participants’ data and biospecimens. Any researchers wishing to use the resources from the cohort will need to complete an application. The process will vary for biospecimens and depend on the sensitivity of the requested data. 
+
+To improve data traceability and reproducibility of analyses and results according to FAIR (Findable, Accessible, Interoperable, Reusable) data principles, Connect data access will be granted through a cloud-hosted Connect for Cancer Prevention Data Platform. The Data Platform will facilitate access to raw and derived data, metadata, data dictionaries, and annotated code to all platform users. 
+
+All projects approved for data and sample use will be noted on the study website, including project summaries and study team descriptions. 
+
+For more information, contact Mia Gaudet.
