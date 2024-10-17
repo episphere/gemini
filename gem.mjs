@@ -26,7 +26,7 @@ class GEM {
             console.log('res:',res.candidates[0].content.parts[0].text)
             return res
         }
-        this.embed=async function(txt="how to best grill sardines"){
+        this.embed=async function(txt="how to best grill sardines",dim=768){
             let res = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent`, {
                 method: 'POST',
                 headers: {
@@ -35,6 +35,7 @@ class GEM {
                 },
                 body: JSON.stringify({
                     "model": "models/text-embedding-004",
+                    "output_dimensionality":dim,
                     "content": {
                         "parts": [{
                             "text": txt
@@ -42,10 +43,12 @@ class GEM {
                     }
                 })
             })).json()
+            console.log(res)
             return res.embedding.values
         }
-        this.chat=async function(div,url){ // target div and context url 
+        this.chat=async function(div,url='https://episphere.github.io/gemini/connectStudy.txt'){ // target div and context url 
             console.log(`chatting ...`)
+            let txt = await (await fetch(url)).text()
             if(typeof(div)=='string'){
                 div = document.getElementById(div)
             }
@@ -53,7 +56,19 @@ class GEM {
                 div = document.createElement('div')
                 document.body.appendChild(div)
             }
-            div.innerHTML='Chat with me:<textarea>...</textarea>'
+            // scafold 
+            div.innerHTML=`<div id="divQuestion"></div><hr><textarea id="txtPrompt">experimental bot, don't take seriously</textarea>`
+            // operate on textarea
+            let txtPrompt = div.querySelector('#txtPrompt')
+            let that=this
+            txtPrompt.onkeyup=async function(ev){
+                if(ev.key=='Enter'){
+                    console.log(ev.target.value,that)
+                    let ans = await that.post(ev.target.value)
+                    console.log(ans)
+                }
+            }
+            4
         }
     }
 }
