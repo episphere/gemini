@@ -1,2 +1,2 @@
-console.log(`gemini chat being tested at \n${Date()}`)
+console.log(`stand alone gemini chat being tested at \n${Date()}`)
 
