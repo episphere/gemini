@@ -4,6 +4,7 @@ class GEM {
     constructor(key) {
         this.loadedAt = Date()
         this.key = key || localStorage.gemKey
+        if(this.key.length<5){delete this.key}
         if (!this.key) {
             this.key = prompt(`please provide your API key, you can find it at https://aistudio.google.com/app/apikey`)
             localStorage.gemKey = this.key
