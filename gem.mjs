@@ -51,6 +51,7 @@ class GEM {
             console.log(res)
             return res.embedding.values
         }
+        /*
         this.chat=async function(div,url='https://episphere.github.io/gemini/connectStudy.txt'){ // target div and context url 
             console.log(`chatting ...`)
             let txt = await (await fetch(url)).text()
@@ -75,6 +76,7 @@ class GEM {
             }
             4
         }
+        */
     }
 }
 
