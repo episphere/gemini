@@ -1,42 +1,59 @@
-console.log(`stand alone gemini chat deployed at \n${Date()}`)
+console.log(`stand alone gemini chat deployed at \n${Date()}`);
 
-const mod = (await  import('./gem.mjs'))
+const shdown = new ((await import('https://esm.sh/showdown@2.1.0')).default).Converter
+const mod = (await import('./gem.mjs'))
 const gem = new mod.GEM(mod.validKey())
 const post = gem.post
-post('hello')  // testing
+let conversation=[]
 
+async function converse(conversation=[],url='https://episphere.github.io/gemini/connectStudy.txt'){
+    if(conversation.length==0){
+        let txt = await (await fetch(url)).text()
+        conversation=[txt]
+    }
+    let res = await post(conversation.join(' ; '))
+    conversation.push(res.candidates[0].content.parts[0].text)
+    return conversation 
+    // note recursion:
+    // conversation = await converse(conversation)
+}
 
-//export{
-//    post
-//}
-
-//get post from instance of GEM
-//post = (new (await  import('./gem.mjs')).GEM).post
-
-/*
-        this.chat=async function(div,url='https://episphere.github.io/gemini/connectStudy.txt'){ // target div and context url 
-            console.log(`chatting ...`)
-            let txt = await (await fetch(url)).text()
-            if(typeof(div)=='string'){
-                div = document.getElementById(div)
-            }
-            if(!div){
-                div = document.createElement('div')
-                document.body.appendChild(div)
-            }
-            // scafold 
-            div.innerHTML=`<div id="divQuestion"></div><hr><textarea id="txtPrompt">experimental bot, don't take seriously</textarea>`
-            // operate on textarea
-            let txtPrompt = div.querySelector('#txtPrompt')
-            let that=this
-            txtPrompt.onkeyup=async function(ev){
-                if(ev.key=='Enter'){
-                    console.log(ev.target.value,that)
-                    let ans = await that.post(ev.target.value)
-                    console.log(ans)
-                }
-            }
-            4
+async function chat(div,url='https://episphere.github.io/gemini/connectStudy.txt'){
+    if (typeof (div) == 'string') {
+        div = document.getElementById(div)
+    }
+    if (!div) {
+        div = document.createElement('div')
+        document.body.appendChild(div)
+    }
+    console.log('chatting at ',div)
+    div.innerHTML = `<hr><div id="divConverse"></div><textarea id="txtPrompt" style="width:40em">studying documentation at ${url}...</textarea><br>[<a href="${url}" target="_blank">source</a>]`
+    //debugger
+    let divConverse = div.querySelector('#divConverse')
+    let divExchange = document.createElement('div') // individual exchange
+    let txtPrompt = div.querySelector('#txtPrompt')
+    divConverse.appendChild(divExchange)
+    conversation = await converse([],url)
+    conversation.push('give this document a plain text short title')
+    conversation = await converse(conversation)
+    
+    divExchange.innerHTML=`<h3>${conversation[3]}</h3>`
+    txtPrompt.value=''
+    txtPrompt.focus()
+    txtPrompt.onkeyup = async function(ev) {
+        if (ev.key == 'Enter') {
+            let divQuestion = document.createElement('div')
+            divConverse.appendChild(divQuestion)
+            divQuestion.innerHTML=`<p style="color:darkgreen">${txtPrompt.value}</p>`
+            conversation.push(txtPrompt.value)
+            txtPrompt.value='...'
+            conversation = await converse(conversation)
+            txtPrompt.value=''
+            let divAnswer = document.createElement('div')
+            divConverse.appendChild(divAnswer)
+            divAnswer.innerHTML=`<span style="color:navy">${shdown.makeHtml(conversation.slice(-1)[0])}</span><hr>`
         }
-        */
+    }
+}
 
+export {converse,chat}
