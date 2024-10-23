@@ -56,4 +56,6 @@ async function chat(div,url='https://episphere.github.io/gemini/connectStudy.txt
     }
 }
 
+`(await import("https://episphere.github.io/gemini/chat.mjs")).chat(document.body,'https://episphere.github.io/gemini/TCGA-BP-5195.25c0b433-5557-4165-922e-2c1eac9c26f0.txt')`
+
 export {converse,chat}
