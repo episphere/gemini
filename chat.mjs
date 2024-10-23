@@ -1,7 +1,7 @@
 console.log(`stand alone gemini chat deployed at \n${Date()}`);
 
 const shdown = new ((await import('https://esm.sh/showdown@2.1.0')).default).Converter
-const mod = (await import('./gem.mjs'))
+const mod = (await import('https://episphere.github.io/gemini/gem.mjs'))
 const gem = new mod.GEM(mod.validKey())
 const post = gem.post
 let conversation=[]
@@ -34,7 +34,7 @@ async function chat(div,url='https://episphere.github.io/gemini/connectStudy.txt
     let txtPrompt = div.querySelector('#txtPrompt')
     divConverse.appendChild(divExchange)
     conversation = await converse([],url)
-    conversation.push('give this document a plain text short title')
+    conversation.push('write a short summary')
     conversation = await converse(conversation)
     
     divExchange.innerHTML=`<h3>${conversation[3]}</h3>`
