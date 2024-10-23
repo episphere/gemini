@@ -34,7 +34,7 @@ async function chat(div,url='https://episphere.github.io/gemini/connectStudy.txt
     let txtPrompt = div.querySelector('#txtPrompt')
     divConverse.appendChild(divExchange)
     conversation = await converse([],url)
-    conversation.push('write a short summary')
+    conversation.push('write summary')
     conversation = await converse(conversation)
     
     divExchange.innerHTML=`<h3>${conversation[3]}</h3>`
