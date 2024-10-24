@@ -34,10 +34,10 @@ async function chat(div,url='https://episphere.github.io/gemini/connectStudy.txt
     let txtPrompt = div.querySelector('#txtPrompt')
     divConverse.appendChild(divExchange)
     conversation = await converse([],url)
-    conversation.push('write summary')
+    conversation.push('write brief summary')
     conversation = await converse(conversation)
     
-    divExchange.innerHTML=`<h3>${conversation[3]}</h3>`
+    divExchange.innerHTML=`<span style="color:maroon">${conversation[3]}</span><hr>`
     txtPrompt.value=''
     txtPrompt.focus()
     txtPrompt.onkeyup = async function(ev) {
