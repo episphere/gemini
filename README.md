@@ -15,6 +15,6 @@ To specify the reference document and the target DOM element (if you leave it nu
 ```javascript
 (await import("https://episphere.github.io/gemini/chat.mjs")).chat(null,'https://episphere.github.io/gemini/TCGA-BP-5195.25c0b433-5557-4165-922e-2c1eac9c26f0.txt')
 ```
-In either case you can also retrieving the reference document by clicking on [source].
+In either case you can also retrie the reference document by clicking on [source].
 
 Issues and improvement suggestions equally welcome at https://github.com/episphere/gemini/issues.
