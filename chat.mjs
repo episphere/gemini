@@ -37,7 +37,7 @@ async function chat(div,url='https://episphere.github.io/gemini/connectStudy.txt
     conversation.push('write brief summary')
     conversation = await converse(conversation)
     
-    divExchange.innerHTML=`<span style="color:maroon">${conversation[3]}</span><hr>`
+    divExchange.innerHTML=`<span style="color:maroon">${shdown.makeHtml(conversation[3])}</span><hr>`
     txtPrompt.value=''
     txtPrompt.focus()
     txtPrompt.onkeyup = async function(ev) {
