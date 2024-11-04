@@ -26,6 +26,7 @@ async function chat(div,url='https://episphere.github.io/gemini/connectStudy.txt
         div = document.createElement('div')
         document.body.appendChild(div)
     }
+    //const shadow = div.attachShadow({ mode: "open" });
     console.log('chatting at ',div)
     div.innerHTML = `<hr><div id="divConverse"></div><textarea id="txtPrompt" style="width:40em">studying documentation at ${url}...</textarea><br>[<a href="${url}" target="_blank">source</a>]`
     //debugger
