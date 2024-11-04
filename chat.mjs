@@ -1,4 +1,4 @@
-console.log(`stand alone gemini chat deployed at \n${Date()}`);
+console.log(`standalone gemini chat deployed at \n${Date()}`);
 
 const shdown = new ((await import('https://esm.sh/showdown@2.1.0')).default).Converter
 const mod = (await import('https://episphere.github.io/gemini/gem.mjs'))
