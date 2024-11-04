@@ -10,10 +10,13 @@ add it to bank document
 <script>
     (async function(){
         if(location.hash.match('geminiDoc')){
-            let docURL='https://episphere.github.io/gemini/connectStudy.txt'
-            //let docURL=location.hash.match('geminiDoc').input.match(/[^\$]+geminiDoc=([^\$]+)/g)[0].split('=')[1];
+            //let docURL='https://episphere.github.io/gemini/connectStudy.txt'
+            let docURL=location.hash.match('geminiDoc').input.match(/[^\$]+geminiDoc=([^\$]+)/g)[0].split('=')[1];
             console.log('reading ... ',docURL);
+            //let chat = (await import("./chat.mjs")).chat;
+            //chat("geminiChat",docURL)
             (await import("./chat.mjs")).chat("geminiChat",docURL)
+            
         }        
     })()
     // try, for example, insert reference doc URL in the domain hash: 
