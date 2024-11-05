@@ -4,17 +4,33 @@ assembling chat in div with id=geminiChat.
 if no rarget element is provided, then 
 add it to bank document
 -->
-
-<div id="geminiChat">Element of your choice, see for example from <a href="https://pubmed.ncbi.nlm.nih.gov/38487800" target="_blank">PMID:38487800</a>: <a href="https://episphere.github.io/gemini/chat.html#geminiDoc=https://episphere.github.io/gemini/doc/TCGA-BP-5195.25c0b433-5557-4165-922e-2c1eac9c26f0.txt" target="blank">TCGA-BP-5195.25c0b433-5557-4165-922e-2c1eac9c26f0</a>, </div>
+<div id="nonGemini">
+    A div with id "geminiChat" was created below as the target for the chat function. 
+    In this bare bones application, the URL to the reference document will be picked up from the location hash.
+    See for example from <a href="https://pubmed.ncbi.nlm.nih.gov/38487800" target="_blank">TCGA reports</a>: 
+    <p>
+        <li><a href="https://episphere.github.io/gemini/chat.html#geminiDoc=https://episphere.github.io/gemini/doc/TCGA-BP-5195.25c0b433-5557-4165-922e-2c1eac9c26f0.txt" target="blank">TCGA-BP-5195.25c0b433-5557-4165-922e-2c1eac9c26f0</a>,</li>
+        <li><a href="https://episphere.github.io/gemini/chat.html#geminiDoc=https://episphere.github.io/gemini/doc/TCGA-D7-8573.b7306a47-697d-4ed3-bbe1-81d49674a8f8.txt" target="blank">TCGA-D7-8573.b7306a47-697d-4ed3-bbe1-81d49674a8f8</a>,</li>
+        <li><a href="https://episphere.github.io/gemini/chat.html#geminiDoc=https://episphere.github.io/gemini/doc/TCGA-EI-7004.13591eed-30e5-47a3-91be-7a370663d2d4.txt" target="blank">TCGA-EI-7004.13591eed-30e5-47a3-91be-7a370663d2d4</a>,</li>
+    </p>
+    <p>
+        And another example, from the description of DCEG Connect cohort study:
+    </p>
+    <p>
+        <li><a href="https://episphere.github.io/gemini/chat.html#geminiDoc=https://episphere.github.io/gemini/doc/connectStudy.txt" target="blank">connectStudy</a></li>
+    </p>
+</div>
+<div id="geminiChat">This is the DOM elementElement of your choice for assembling the chat interface</div>
 <link href="https://episphere.github.io/gemini/gem.css" rel="stylesheet">
 <script>
-    (async function(){
-        if(location.hash.match('geminiDoc')){
-            let docURL=location.hash.match('geminiDoc').input.match(/[^\$]+geminiDoc=([^\$]+)/g)[0].split('=')[1];
-            console.log('reading ... ',docURL);
-            (await import("./chat.mjs")).chat("geminiChat",docURL)
-        }        
-    })()
+    (async function() {
+        if (location.hash.match('geminiDoc')) {
+            let docURL = location.hash.match('geminiDoc').input.match(/[^\$]+geminiDoc=([^\$]+)/g)[0].split('=')[1];
+            console.log('reading ... ', docURL);
+            (await import("./chat.mjs")).chat("geminiChat", docURL)
+        }
+    }
+    )()
     // try, for example, insert reference doc URL in the domain hash: 
     // '#geminiDoc=https://episphere.github.io/gemini/doc/TCGA-BP-5195.25c0b433-5557-4165-922e-2c1eac9c26f0.txt
     // '#geminiDoc=https://episphere.github.io/gemini/doc/connectStudy.txt
