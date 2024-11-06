@@ -1,0 +1,466 @@
+﻿Welcome to the CDM Survey Sub‐Working Group wiki!
+Mission Statement
+The CDM Survey Sub-Workgroup is a collaborative effort to unlock the potential of survey data within the Observational Health Data Sciences and Informatics (OHDSI) framework. We aim to develop a standardized approach for integrating survey data into the OMOP Common Data Model (CDM). This will be achieved through the development of standards, tools, and best practices to transform survey questions and responses into the CDM format. This, in turn, will empower researchers to conduct more robust analyses across diverse datasets, ultimately leading to richer insights and improved health outcomes.
+
+
+Meeting Notes 10‐28‐2024
+lorszag edited this page last week · 3 revisions
+Date: 10-28-2024
+Attendees: Queenie Ho, Montse Garcia-Closas, Nicole Gerlanc, Brandon Jernigan, James Lacey, Tamara Litwin, Yangmei Li, Brandy Mapes, Katie O'Brien, Leila Orszag, Vinh Tran
+Meeting Recording
+________________
+
+
+Agenda
+1. Introductions
+2. Landscape Survey, cont.
+Discussion
+* Introductions
+   * Vinh Tran, Survey Scientist @ 23&Me
+   * Yangmei Li, Senior Data Scientist @ UK Biobank
+* Landscape Survey, continued
+   * Current Survey Draft
+   * Where should we be sending/putting the survey out, once it is completed?
+      * Wiki
+      * Community Call
+      * OHDSI Weekly Newsletter
+      * NCI Cohort Consortium
+   * Analyses
+      * Free text
+      * Tag as we get them, once we see the scope we can change our minds.
+To Dos
+*  Create & send out survey draft - Nicole & Leila
+*  Complete survey - all
+
+
+Meeting Notes 09‐30‐2024
+lorszag edited this page on Oct 1 · 6 revisions
+Date: 09-30-2024
+Attendees: Thomas Ahearn, Montse Garcia-Closas, Nicole Gerlanc, James Lacey, Tamara Litwin, Brandy Mapes, Leila Orszag
+Meeting Recording
+________________
+
+
+Agenda
+1. Introductions
+2. Landscape Survey Content
+3. Landscape Survey Administration
+Discussion
+* Introductions
+   * Leila Orszag, post-baccalaureate fellow on Connect Analytics team
+* Landscape Survey Content, continued
+   * Question Ordering
+      * Want to start with basic/easy to answer questions to avoid attrition early on
+      * Rearrange to ask for links to code, survey itself before anything else as these likely provide important information for our purposes
+      * Ask for contact information for follow up purposes at the end of the survey
+      * Ask lifecycle question towards start of survey
+   * Question Reworking
+      * Institution Question
+         * Reword to get the information we are actually looking for: who developed the tool and who administered the survey
+         * Potentially add question about whether the study the survey was used for was single institution or a consortium
+      * Modifications to Existing Tools Question
+         * Narrow question and use drop down
+         * New options: added/removed questions, added/removed responses, edited questions, edited responses, changed instructions, reordered, and none of the above
+      * Reassessment
+         * Add new question to ascertain whether reassessments are done at all
+         * Allow for open text option since some surveys have specific/irregular reassessment cycles
+      * Summary scores
+         * Include explanation text in question to make sure people understand what we are asking
+      * Data availability: clarify in question whether we are talking about individual or summary level data
+         * Add option for controlled data access
+      * Data storage
+         * Is this important to know?
+         * What if data is stored in multiple formats?
+         * Should we ask about this in another survey targeted towards groups who are further along in the process?
+* Landscape Survey Administration
+   * Google Forms seems like a good option
+      * Skip logic is available by section
+   * Maybe survey should be sectioned
+      * Basics: links, institution
+      * Survey: language, administration, reassessment, data storage
+      * Analysis: mapping of OMOP, tools, etc.
+   * Group will test survey prior to us sending it out to others
+To Dos
+*  Send out drafted survey questions - Nicole
+*  Review survey questions & return suggestions to Nicole - all, by end of next week
+*  Create draft survey - Nicole & Leila
+*  Test draft survey - all
+
+
+Meeting Notes 08‐19‐2024
+lorszag edited this page on Sep 23 · 8 revisions
+Date: 08-19-2024
+Attendees: Thomas Ahearn, Kai Yin Ho, Julia Lanoue, Tamara Litwin, Nicole Gerlanc, Katie O'Brien
+Speaker: Vaclav Papez
+Meeting Recording
+________________
+
+
+Agenda
+1. Transformation of the UK Biobank to the OMOP Common Data Model, Vaclav Papez
+Discussion
+* Transformation of the UK Biobank to the OMOP Common Data Model, Vaclav Papez:
+   * Paper Link
+   * Objective: Federated research related to COVID-19.
+   * UK Biobank Description
+      * Population level
+      * Longitudinal research study of 500k patients ranging 40-69 years
+      * Participants located across England, Scotland, Wales
+   * Data Collection Types & Sources
+      * Baseline phenotypic data
+         * 8000 data fields, most of which uses proprietary dictionaries without mappings to other vocabularies
+         * prioritized 500 data fields based on working group recommendations and clinician interest
+         * 5 people within Papez's group worked on this project and they did outsource some of the work
+         * implementation was smooth; code is publicly available on GitHub. However, much of the code is specific to UK Biobank so may not be easily reusable
+      * Electronic health records (EHR) from primary care centers & hospitals
+         * Imaging data
+      * Cancer registry
+      * National death registry
+      * Genotypic data, including biomarkers
+      * Sociodemographic & lifestyle data
+      * Mapping details
+         * Mapped numerical values to appropriate units
+         * For Boolean variables, only mapped True responses to a concept ID. Ignored false values
+         * For discrete fields, mapped to concept & value
+         * Mapped dates & demographic details directly to OMOP CDM
+         * Tested mapping using synthetic data
+         * Did not achieve full coverage, but stopped mapping at a sufficient level (as determined by their team) as further mapping would have been very resource intensive
+   * Current Challenges
+      * Wide format of baseline data
+      * Proprietary baseline data codings
+      * Diverse coding systems for EHR
+      * Diverse recording practice from different regional data providers
+      * No existing mappings for some vocabularies
+   * Survey Data Experience & Mapping Methods
+      * Numeric fields: concept & event mapping, unit mapping
+      * Boolean fields: concept mapping
+      * Discrete fields: concept mapping, value mapping
+      * Had to create bespoke mapping for continuous, discrete, unit data types
+      * Baseline data processing – syntactic mapping
+         * Source to stem_table to CDM
+         * Wide to long format
+      * Data fields annotated by OMOP Concept ID using the UK biobank Athena vocabulary
+         * No mapping from nonstandard UK Biobank fields to standard SNOMED concepts to custom mapping tables (USAGI)
+         * All semantically unmapped fields were transformed into the OMOP Observation domain with a Concept ID ‘0’ and the original field ID as the source value
+   * Results of Baseline Mapping
+      * Not a lot of coverage for mapped used terms but a lot of coverage for mapped events
+   * Challenges of Questionnaire Data in the CDM
+      * Significant amount of preprocessing and consolidation across multiple fields
+         * Many vocabularies and mapping tables
+         * Each type of data required different mapping approaches
+         * Insufficient number of OMOP measurement attributes
+         * Explicitly captured negation and data missingness
+         * Historical medical events are considered outside the observation period
+   * Questions
+      * Code for transformation is available on GitHub; however, much of the work is not generalizable because it was developed specifically for UK Biobank
+      * If given the chance to do this again, Papez would use an automatic or semi-automatic pipeline for validation
+      * If participant responses to the same question change over time, Papez would use most recent answer if it made logical sense
+
+
+
+
+Meeting Notes 08‐05‐2024
+lorszag edited this page on Sep 23 · 6 revisions
+Date: 08-05-2024
+Attendees: Nicole Gerlanc, James Lacey, Julia Lanoue, Tamara Litwin, Soyoun Moon, Tetiana Orlova
+Meeting Recording
+________________
+
+
+Agenda
+1. Upcoming Speakers
+2. Landscape Survey Content, continued (Past Discussion)
+Discussion
+* Upcoming Speakers: Vaclav Papez (UK Biobank) scheduled for August 19
+* Landscape Survey Content, continued
+   * Past Discussion
+   * Is data analysis active/ongoing?
+   * Were there any administrative or technical challenges?
+   * What software(s) are being used to create the survey? Are they open source?
+      * What were the pros and cons of the softwares used?
+   * What software(s) are being used to analyze the survey data?
+      * What were the pros and cons of the softwares used?
+   * Is the survey being reused?
+   * What is the structure of the data?
+   * What database was used? (MySQL, mongodb, etc.)
+   * Were extension tables created?
+   * Were additional vocabularies created or used?
+   * What tools were used to map to OMOP?
+   * Why did they decide to map to OMOP?
+   * How are scores calculated?
+   * What would they change if they were to redo the survey/project?
+      * Was the initial mapping project worthwhile?
+   * Issues with proprietary software
+      * Challenges with open source software integration configuration
+      * Administrative vs. execution challenges
+   * Tools for this survey?
+      * Qualtrics (paid)
+      * SurveyMonkey (free)
+      * RedCap
+      * Google Forms (free)
+   * To make survey data useable, make as many fields factor/boolean variables as possible vs. free text
+Meeting Notes 07‐29‐2024
+lorszag edited this page on Sep 23 · 9 revisions
+Date: 07-29-2024
+Attendees: Thomas Ahearn, Nicole Gerlanc, Kai Yin Ho, Tamara Litwin, Brandy Mapes, Soyoun Moon, Katie O'Brien
+Speaker: Oleg Zhuk
+Meeting Recording
+________________
+
+
+Agenda
+1. Entity Attribute Value Model Data in Handling OMOP CDM, Oleg Zhuk
+2. Landscape Survey, continued (Past Discussion)
+Discussion
+* Entity Attribute Value Model Data in Handling OMOP CDM, Oleg Zhuk:
+   * Issues
+      * Survey vocabularies are heterogenous in structure and standard OMOP codes are often misused
+      * There is only one concept representing each clinical event, but sometimes people want to ask closely related but sufficiently different questions for this to be effective.
+      * There should be no negative information. No concept should represent the absence of evidence
+      * No timing should be present in vocabularies. To get/analyze time information, queries should be run
+      * Sometimes questions are same, but answer choices are different. This also creates significant issues with mapping.
+   * Recommendations
+      * Make question specific changes
+      * Add one field (value_source_concept_id) into two tables (observation & measurement)
+      * Align definition of the CDM fields with the mapping practice & expectations
+   * Questions & Discussion
+      * Benefits & logic of mapping to non-standard vs. working within standard concepts
+         * Standard concepts violate the vocabulary principe of "unique standard concepts"
+      * Examples of standard vs. non-standard concepts
+         * Most drugs are standard
+         * Zhuk stated he only creates meaningful standard concepts, meaning he does not create standard concepts for every non-standard concept. Not every concept is meant to be standardized because some vary meaningfully from survey to survey; wants to allow those running those individual surveys to create their own (non-standard) concepts.
+      * Vocabulary should deal with matching survey data to EHR data. Zhuk states some custom logic could be created to deal with this issue.
+* Landscape Survey, continued: (Past Discussion)
+Meeting Notes 07‐08‐2024
+lorszag edited this page on Sep 9 · 10 revisions
+Date: 07-08-2024
+Attendees: Montse Garcia Closas, Nicole Gerlanc, Julia Lanoue, Brandy Mapes
+Speaker: Hayden Spence
+Meeting Recording
+________________
+
+
+Agenda
+1. Upcoming Speakers
+2. An Overview of Patient-Generated Health Data in U.S. Federal Healthcare Systems, Hayden Spence
+3. Landscape Survey Content, continued (Past Discussion)
+Discussion
+* Upcoming Speakers: Oleg Zhuk scheduled for 7/29/24.
+* An Overview of Patient-Generated Health Data in U.S. Federal Healthcare Systems
+   * Objective: To examine key healthcare surveys conducted by federal agencies
+   * Scope: Primary focus on VA, HHS, and DoD
+   * Relevance: These types of surveys have informed public health policy in the past and will continue to do so.
+      * Survey of Healthcare Experiences of Patients (SHEP)
+   * Challenges: Low response rates, ensuring data integrity, linking data
+   * Questions & Discussion
+      * Linking patient healthcare data with healthcare survey is limited by regulations
+      * SHEP in OMOP form could be useful because EHR data could be combined for additional investigation
+* Landscape Survey Content, continued
+   * Past Discussion
+   * Links to documentation would minimize burden on participants and make the work easier to reuse, adhering to FAIR principles
+Action Items
+*  Invitation to UK Biobank - Montse
+*  Follow up with Nutrition Precision Institute - Brandy
+Meeting Notes 06‐24‐2024
+lorszag edited this page on Sep 23 · 7 revisions
+Date: 06-24-2024
+Attendees: Nicole Gerlanc, James Lacey, Soyoun Moon, Katie O'Brien
+Meeting Recording
+________________
+
+
+Agenda
+1. Introductions
+2. Updates
+3. Upcoming Speakers
+4. Landscape Survey Content
+Discussion
+* Introductions:
+   * Soyoun Moon: Summer Fellow
+* Updates:
+   * OKRs were presented to the CDM Workgroup on May 7 and the OHDSI community on June 7. No suggestions were made.
+   * Wiki updates are upcoming
+* Upcoming Speakers:
+   * Quorum required for speakers
+   * July 9: Hayden Spence, research consultant (Chiron Cohort)
+   * TBD: Oleg Zhuk
+* Landscape Survey Content:
+   * Name
+   * Institution
+   * Country
+   * Role
+   * Links to documentation & data dictionary
+   * Details about survey
+      * Pre-existing tool, if applicable
+      * Number of versions
+      * Estimated number of responses
+      * Method of capture (e.g. RedCap, Qualtrics, Survey Monkey)
+      * Challenges with proprietary software, if appliable
+      * Survey languages, (if applicable)[https://forums.ohdsi.org/t/dealing-with-multiple-races-and-other-exceptions/20091]
+      * Is there complex skip logic? (Typically not)
+      * What is the person's role?
+         * Goal to get multiple people working on the same survey to reply
+      * Is the survey anonymous? In other words, is the survey meant to be individual or population level?
+   * Details about data & processing
+      * Storing of metadata
+      * Structure (tabular, JSON)
+      * Extension tables, if applicable
+      * Additional standardized vocabularies, if applicable
+      * Use cases for mapping to OMOP & best practices for doing so
+Action Items
+*  Clean up notes - Soyoun & Nicole
+*  Brainstorm further questions
+Meeting Notes 04‐29‐2024
+lorszag edited this page on Sep 9 · 6 revisions
+Date: 04-29-2024
+Attendees: Thomas Ahearn, Montse Garcia Closas, Nicole Gerlanc, Kai Yin Ho, Brandy Mapes
+Meeting Recording
+________________
+
+
+Agenda
+1. All of Us History
+2. All of Us Current Scope - Major Activities
+3. All of Us Resources
+Discussion
+* All of Us History: Enrollment beginning in 2017, Researcher Workbench launched in 2020.
+* All of Us Current Scope:
+   * Key Principles
+      * Advance science
+      * Complements & augments EHR
+      * Attempt to use existing measures from other national studies
+      * Pilot testing with qualitative & quantitative methods
+   * Guidelines
+      * Define vision
+      * Select domains
+      * Review existing questions (existing scales vs. creating new ones)
+      * Implement & test survey
+      * Release survey
+* All of Us Resources:
+   * For researchers
+      * Virtual webinars & office hours
+      * User support hub
+      * Help desk
+      * Researcher outreach (live demos, workshops, etc.)
+   * Custom OMOP vocabulary
+Meeting Notes 04‐15‐2024
+lorszag edited this page on Sep 9 · 4 revisions
+Date: 04-15-2024
+Attendees: Attendees: Thomas Ahearn, Montse Garcia Closas, Nicole Gerlanc, Kai Yin Ho, James Lacey, Tamara Litwin, Brandy Mapes, Katie O'Brien
+Meeting Recording
+________________
+
+
+Agenda
+1. Updates
+2. Presentations
+Discussion
+* Updates:
+   * GitHub is now accessible
+   * Scheduled presentation of Mission Statement & OKRs to CDM workgroup on 5/7/24 at 10 AM ET.
+* Presentations:
+   * Jim Lacey - California Teachers Study
+   * Tom Ahearn - Breast Cancer Risk Prediction (BCRP) Project
+Action Items
+*  Reach out to Craig Sachson about OHDSI workgroup page access - Nicole
+Meeting Notes 03‐18‐2024
+lorszag edited this page on Sep 9 · 6 revisions
+Date: 03-18-2024
+Attendees: Thomas Ahearn, Michael Cook, Montse Garcia Closas, Nicole Gerlanc, Kai Yin Ho, James Lacey, Tamara Litwin, Brandy Mapes
+Meeting Recording
+________________
+
+
+Agenda
+1. Updates
+2. OKRs: Landscape Analysis
+Discussion
+* Updates:
+   * Have not gotten GitHub repo link yet from OHDSI
+* Landscape Analysis: Summary of discussion.
+   * Review of Documentation
+      * Phoenix Toolkit
+      * ScHARe CDM
+      * Request info from NIH CDE repository
+   * Create survey to solicit information about other OMOP survey work
+      * Ask for biggest needs for mapping & most important survey elements
+      * Promote survey through OHDSI community call & forums
+   * Crowd source collection & collation of information
+   * Invite Speakers
+      * Suggested cohorts: All of Us, UK Biobank, CPS, Nutrition for Precision Health, CPRD
+      * Provide speakers with GitHub, mission statement, and list of questions
+Action Items
+*  Invitation to Precision Health - Brandy
+*  Invitation to Alpa Patel (CPS) - Monste
+*  Invitation to UK Biobank - Montse
+*  Investigate other possible UK speakers - Michael & Montse
+*  Invitation to Craig Mayer (CRPD) - Nicole
+*  Draft of mission statement & OKRs - Nicole
+*  Draft of survey questions - Nicole
+*  Plan presentation date for needs of cohorts & value propositions for mapping to OMOP - Tom & Jim
+Meeting Notes 03‐04‐2024
+lorszag edited this page on Sep 9 · 5 revisions
+Date: 03-04-2024
+Attendees: Thomas Ahearn, Michael Cook, Montse Garcia Closas, Nicole Gerlanc, Kai Yin Ho, James Lacey, Tamara Litwin, Brandy Mapes, Magda Meier, Katie O'Brien
+Meeting Recording
+________________
+
+
+Agenda
+1. Defining a Quorum
+2. Objectives & Key Results (OKRs)
+Discussion
+* Defining a Quorum: Simple majority (>50% of group members) was decided upon due to the group meeting twice per month.
+* OKRs: Discussed broad goals & more specific objectives.
+   * Need for mission statement to define group's long term goals
+   * Potential Objectives
+      * Define the end result for mapping survey data to OMOP
+      * Build a vocabulary to encompass survey question types
+      * Create a landscape analysis of existing resources
+      * Develop tools to facilitate mapping
+Action Items
+*  Investigate OMOP working group procedures & determine if formal bylaws or specific requirements exist - Nicole
+*  Establish GitHub repository under OMOP organization - Nicole
+*  Review Phoenix Toolkit as potential resource for common survey data elements
+*  Continue conducting landscape analysis to identify existing resources
+Meeting Notes 02‐05‐2024
+lorszag edited this page on Sep 9 · 8 revisions
+Date: 02-05-2024
+Attendees: Thomas Ahearn, Michael Cook, Montse Garcia Closas, Nicole Gerlanc, James Lacey, Tamara Litwin, Brandy Mapes, Magda Meier, Katie O'Brien
+Meeting Recording
+________________
+
+
+Agenda
+1. Introductions
+2. Status
+3. Objectives & Key Results
+Discussion
+* Introductions:
+   * Tom Ahearn – National Cancer Institute – Confluence, Breast Cancer Risk Prediction Project
+   * Michael Cook – United Kingdom National Health Services – Executive Director of Science for Our Future Health
+   * Montse Garcia-Closas – Institute of Cancer Research – PI Generations Cohort, former PI Connect, Confluence, Breast Cancer Risk Prediction Project
+   * Nicole Gerlanc – National Cancer Institute – Data Analyst Lead Connect for Cancer Prevention
+   * James Lacey - Beckman Research Institute of City of Hope – PI California Teachers Study, Member Cohort Consortium Steering Committee, Past Chair Cohort Consortium Steering Committee
+   * Tamara Litwin – National Institute of Health – Epidemiologist for All of Us
+   * Brandy Mapes - Vanderbilt University Medical Center – Research Director, All of Us
+   * Magda Meir - United Kingdom National Health Services – Head of Data Engineering for Our Future Health
+   * Katie O'Brien - National Institute of Environmental Health Sciences - Sister Study, Connect questionnaires, Premenopausal Breast Cancer Collaborative, OC3
+* Status: Variable presentation forwarded & linked below. Reviewed other survey work.
+   * Meeting Recording for CDM Variable Presentation
+   * Other Survey Work
+      * Nicole: We are the first group to create an extension table & make mapping widely available in OMOP.
+      * Brandy: All of Us Review & Discussion
+         * All of Us Vocabulary
+         * All of Us Data Collection & Standardization Methods
+         * Of note, UK Biobank also has a vocabulary with OMOP
+* Objectives & Key Results (OKRs):
+   * Define use cases for mapping survey data to OMOP and using survey data with EHR.
+   * Landscape analysis of what’s available already, who’s done it, and how was it done
+   * Not necessarily for the first year, define a best practices guide for cohorts that want to map survey data.
+   * Articulate what the end result looks like or the value proposition for a cohort.
+   * Identify the platform and the environment where this working group does its work and keeps its information related to the work.
+   * Best practices guide or tutorial should be geared toward those new to OMOP and mapping and include how to get started and define the process in a way that helps those using not feel overwhelmed.
+Action Items
+*  Standard Meeting Time - Invite Sent, Biweekly
+*  Github - Location Pending Reply from Clair
