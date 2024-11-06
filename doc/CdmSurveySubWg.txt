@@ -10,6 +10,34 @@ Attendees: Queenie Ho, Montse Garcia-Closas, Nicole Gerlanc, Brandon Jernigan, J
 Meeting Recording
 ________________
 
+Objectives and Key Results [2024]
+Jake Peters edited this page on Jul 18 · 3 revisions
+1. Establish the CDM Survey Sub-Working Group
+Key Results:
+Regular meetings held bi-weekly on Mondays at 10:00 AM ET. Meeting recordings, agendas, minutes, and other documentation will be readily available.
+Integration with the OHDSI Workgroup webpage to be established for increased visibility.
+Presentation scheduled for the CDM Workgroup on May 7th to introduce the Sub-Group and its goals.
+2. Landscape Assessment
+Activities
+Invite representatives from cohorts with experience using the CDM for survey data to share their knowledge and challenges.
+Conduct a community survey to gather information on experiences and needs related to survey data in the CDM.
+Review the most used Common Data Elements (CDMs) as a foundation for developing standards, tools, and best practices.
+Key Results
+A comprehensive report summarizing survey CDM mapping resources, challenges, and identified development priorities (vocabulary, standards, tools, best practices) to be shared with the OHDSI community.
+3. Development and Testing
+Activities
+Develop concrete use cases and showcase the value proposition for integrating survey data into the CDM using the Breast Cancer Risk Prediction Project (BCRPP) and California Teachers Study (CTS) cohorts as examples.
+Key Results
+Create two to four detailed use cases to guide the development and application of survey mapping tools.
+Additionally, develop compelling value propositions to encourage the OHDSI community to contribute to the Subgroup or map their own survey data to the CDM.
+4. Find and Apply for Future Support
+Actions
+Reach out to participant cohort organizations, OHDSI and elsewhere for funding and individuals to continue the development of CDM survey mapping resources.
+Key Results
+Acquire financial and personnel support to carry out the CDM Survey Sub-Workgroup mission.
+Links:
+OKR Slides PDF
+OKR Video
 
 Agenda
 1. Introductions
@@ -32,6 +60,7 @@ To Dos
 *  Create & send out survey draft - Nicole & Leila
 *  Complete survey - all
 
+________________
 
 Meeting Notes 09‐30‐2024
 lorszag edited this page on Oct 1 · 6 revisions
