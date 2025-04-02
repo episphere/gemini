@@ -55,7 +55,7 @@ class GEM {
                     }
                 })
             })).json()
-            console.log(res)
+            // console.log(res)
             return res.embedding.values
         }
     }
