@@ -1,6 +1,31 @@
 <!-- { "cervicitis":"yes/no", "HPV 18": "yes/no", "Transformation Zone/Endocervical Glands","Present/Absent" } -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://episphere.github.io/gemini/gem.css" rel="stylesheet">
-<div><h1><sup style="color:gray">(mostly)</sup>Cervical Path Reports</h1>Generating latent space for cervical pathology reports using generative AI.</div>
+<div>
+    <h1>
+        <sup style="color:gray">(mostly)</sup>
+        Cervical Path Reports
+    
+    </h1>
+    Generating latent space for cervical pathology reports using generative AI.
+
+</div>
 <button id="loadNico">Load pathology reports</button>
-<script src="nico.js"></script>
+<div id="msgDiv">...</div>
+<script>
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    msg = async function(x,color='blue') {
+        for (let i = 0; i < x.length+1; i++) {
+            await sleep(50)
+            msgDiv.innerHTML = x.slice(0,i)
+            msgDiv.style.color=color
+        }
+    }
+    loadNico.onclick = async function() {
+        //console.log(`loadNico at ${Date()}`);
+        msg('Loading pathology reports')
+        txt = await(await fetch('https://raw.githubusercontent.com/episphere/gemini/main/doc/Electronic%20path%20data%20example(Sheet1).csv')).text()
+    }
+</script>
