@@ -1,5 +1,5 @@
 // get the data
-txt = await (await fetch('https://raw.githubusercontent.com/episphere/gemini/main/doc/Electronic%20path%20data%20example(Sheet1).csv')).text()
+txt = await (await fetch('https://raw.githubusercontent.com/episphere/gemini/main/doc/Electronic%20path%20data%20example(Sheet1).csv')).text();
 rows = txt.split(/\r\n/).slice(0, -1)
 // blank tail removed
 rows = rows.map(function(row) {
