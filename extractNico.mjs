@@ -34,7 +34,7 @@ schema = {
     "required": ["Chronic cervicitis", "HPV 18", "Transformation Zone/Endocervical Glands"]
 }
 
-extractNico = async function(i) {
+async function extractNico(i) {
     let session = await LanguageModel.create()
     // start new session
     let res = await session.prompt(rows[i].txt, {
