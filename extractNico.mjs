@@ -1,4 +1,5 @@
-// get the data
+// to import extractNico:
+// extractNico = (await import('https://episphere.github.io/gemini/extractNico.mjs')).extractNico
 let txt = await (await fetch('https://raw.githubusercontent.com/episphere/gemini/main/doc/Electronic%20path%20data%20example(Sheet1).csv')).text();
 let rows = txt.split(/\r\n/).slice(0, -1)
 // blank tail removed
@@ -35,6 +36,7 @@ let schema = {
 }
 
 async function extractNico(i) {
+    console.log(rows[i].txt)
     let session = await LanguageModel.create()
     // start new session
     let res = await session.prompt(rows[i].txt, {
