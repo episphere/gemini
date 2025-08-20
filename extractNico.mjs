@@ -35,9 +35,11 @@ let schema = {
     "required": ["Chronic cervicitis", "HPV 18", "Transformation Zone/Endocervical Glands"]
 }
 
+let session = await LanguageModel.create()
+
 async function extractNico(i) {
     console.log(rows[i].txt)
-    let session = await LanguageModel.create()
+    // let session = await LanguageModel.create() use existing session
     // start new session
     let res = await session.prompt(rows[i].txt, {
         responseConstraint: schema
