@@ -44,12 +44,26 @@ async function extractNico(i) {
         responseConstraint: schema
     })
     res = JSON.parse(res)
-    return  {
+    return {
         "Chronic cervicitis": res["Chronic cervicitis"],
         "HPV 18": res["HPV 18"],
         "Transformation Zone/Endocervical Glands": res["Transformation Zone/Endocervical Glands"]
     }
 }
-export {
-    extractNico
+
+const wait = (milliseconds=1000) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
+
+async function extractNico75() {
+    // process initial 75 reports
+    let res = [];
+    for (var i = 0; i < 75; i++) {
+        wait(200);
+        res[i] = await extractNico(i)
+        console.log(i,res)
+    }
+    return res
+};
+
+export {extractNico,extractNico75}
