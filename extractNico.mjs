@@ -66,4 +66,4 @@ async function extractNico75() {
     return res
 };
 
-export {extractNico,extractNico75}
+export {extractNico,extractNico75,session}
