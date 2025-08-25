@@ -36,18 +36,20 @@ let schema = {
 }
 
 let session = await LanguageModel.create()  // create shared session
+let res = []
 
 async function extractNico(i) {
     console.log(rows[i].txt)
     // use existing session
-    let res = await session.prompt(rows[i].txt, {
+    let res_i = await session.prompt(rows[i].txt, {
         responseConstraint: schema
     })
-    res = JSON.parse(res)
+    res_i = JSON.parse(res_i)
+    res[i]=res_i
     return {
-        "Chronic cervicitis": res["Chronic cervicitis"],
-        "HPV 18": res["HPV 18"],
-        "Transformation Zone/Endocervical Glands": res["Transformation Zone/Endocervical Glands"]
+        "Chronic cervicitis": res_i["Chronic cervicitis"],
+        "HPV 18": res_i["HPV 18"],
+        "Transformation Zone/Endocervical Glands": res_i["Transformation Zone/Endocervical Glands"]
     }
 }
 
@@ -57,7 +59,6 @@ const wait = (milliseconds=1000) => {
 
 async function extractNico75() {
     // process initial 75 reports
-    let res = [];
     for (var i = 0; i < 75; i++) {
         wait(200);
         res[i] = await extractNico(i)
@@ -66,4 +67,4 @@ async function extractNico75() {
     return res
 };
 
-export {extractNico,extractNico75,session}
+export {extractNico,extractNico75,session,res}
