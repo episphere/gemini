@@ -22,7 +22,7 @@ class GEM {
         let thisKey=this.key
         this.post = async function(txt="how to best grill sardines") {
             // let res = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent`, {
-            let res = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent`, {
+            let res = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
