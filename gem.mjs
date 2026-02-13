@@ -40,15 +40,15 @@ class GEM {
             return res
         }
         this.embed = async function(txt="how to best grill sardines", dim=768) {
-            let res = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent`, {
+            let res = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'x-goog-api-key': `${thisKey}`
                 },
                 body: JSON.stringify({
-                    "model": "models/text-embedding-004",
-                    "output_dimensionality": dim,
+                    "model": "models/gemini-embedding-001",
+                    // "output_dimensionality": dim,
                     "content": {
                         "parts": [{
                             "text": txt
@@ -56,7 +56,8 @@ class GEM {
                     }
                 })
             })).json()
-            // console.log(res)
+            //debugger
+            //console.log(res)
             return res.embedding.values
         }
     }
